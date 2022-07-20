@@ -1,0 +1,37 @@
+﻿<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/Home/Index">Ana Sayfa</a></li>
+    <li class="breadcrumb-item"><a href="/Tables/Index">Tablolar</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Düzenle</li>
+  </ol>
+</nav>
+
+<h3>Update</h3>
+
+<form action="/Tables/Update/@Model.Id" method="post">
+    <div class="container">
+        @if (ViewBag.Message != null)
+        {
+            <span class="alert alert-success">@ViewBag.Message</span>
+        }
+        <div class="mb-3 row">
+            <label for="Adi" class="col-sm-2 col-form-label">Adı</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="Adi" id="Adi" value="@Model.Adi">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="Soyadi" class="col-sm-2 col-form-label">Soyadı</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Soyadi" name="Soyadi" value="@Model.Soyadi">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="Maas" class="col-sm-2 col-form-label">Maaş</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="Maas" name="Maas" value="@Model.Maas">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-left:93%;">Kayıt Et</button>
+    </div>
+</form>
